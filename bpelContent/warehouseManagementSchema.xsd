@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WarehouseManagementSchema" xmlns:tns="http://www.example.org/WarehouseManagementSchema" elementFormDefault="qualified">
+
+
+    <element name="checkAvailabilityOutput"
+    	type="tns:checkAvailabilityOutputType">
+    </element>
+    
+    <element name="checkAvailabilityInput"
+    	type="tns:checkAvailabilityInputType">
+    </element>
+    
+
+    <complexType name="checkAvailabilityInputType">
+    	<sequence>
+    		<element name="productIdQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="checkAvailabilityOutputType">
+    	<sequence>
+    		<element name="productIdAvailableQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="productIdQuantityType">
+    	<sequence>
+    		<element name="productId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="productQuantity" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="reserveProductsInput"
+    	type="tns:reserveProductsInputType">
+    </element>
+    
+    <element name="reserveProductsOutput"
+    	type="tns:reserveProductsOutputType">
+    </element>
+    
+    <complexType name="reserveProductsInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="productIdQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="reserveProductsOutputType">
+    	<sequence>
+    		<element name="reservationResult" type="boolean"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="cancelReservationInput"
+    	type="tns:cancelReservationInputType">
+    </element>
+    
+    <element name="cancelReservationOutput"
+    	type="tns:cancelReservationOutputType">
+    </element>
+    
+    <element name="updateReservationInput"
+    	type="tns:updateReservationInputType">
+    </element>
+
+    <element name="updateReservationOutput"
+    	type="tns:updateReservationOutputType">
+    </element>
+
+    <element name="checkDistanceInput"
+    	type="tns:checkDistanceInputType">
+    </element>
+
+    <element name="checkDistanceOutput"
+    	type="tns:checkDistanceOutputType">
+    </element>
+
+    <complexType name="cancelReservationInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="cancelReservationOutputType">
+    	<sequence>
+    		<element name="CancellationResult" type="boolean"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="checkDistanceOutputType">
+    	<sequence>
+    		<element name="distance" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="checkDistanceInputType">
+    	<sequence>
+    		<element name="customerRegionId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="updateReservationInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="productIdQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="updateReservationOutputType">
+    	<sequence>
+    		<element name="updateResult" type="boolean" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="warehouseId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>
