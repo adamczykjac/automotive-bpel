@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:orderManagementService="http://www.example.org/orderManagementService/" xmlns:sample="http://eclipse.org/bpel/sample" xmlns:warehouseManagementService="http://www.example.org/warehouseManagementService/">
-  <process name="sample:AutoIncOrderProcess">
+  <process name="sample:OrderingProcess">
     <active>true</active>
     <retired>false</retired>
     <process-events generate="all"/>
     <provide partnerLink="client">
-      <service name="sample:AutoIncOrderProcessService" port="AutoIncOrderProcessPort"/>
+      <service name="sample:OrderingProcessService" port="OrderingProcessPort"/>
     </provide>
-    <invoke partnerLink="OrderMgmtPL">
+    <invoke partnerLink="OrderMgmtCreateOrderPL">
       <service name="orderManagementService:orderManagementService" port="orderManagementServiceSOAP"/>
     </invoke>
-    <invoke partnerLink="WarehouseMgmtPL">
+    <invoke partnerLink="WarehouseMgmtCheckAvailPL">
       <service name="warehouseManagementService:warehouseManagementService" port="warehouseManagementServiceSOAP"/>
     </invoke>
   </process>

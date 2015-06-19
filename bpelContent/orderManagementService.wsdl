@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/orderManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="orderManagementService" targetNamespace="http://www.example.org/orderManagementService/" xmlns:xsd1="http://www.example.org/orderManagmentSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="orderManagementService" targetNamespace="http://www.example.org/orderManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/orderManagementService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/orderManagmentSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
-    <xsd:schema
-    	targetNamespace="http://www.example.org/orderManagementService/" xmlns:pref="http://www.example.org/orderManagmentSchema">
-    	<xsd:import schemaLocation="orderManagmentSchema.xsd" namespace="http://www.example.org/orderManagmentSchema"></xsd:import>
+    <xsd:schema targetNamespace="http://www.example.org/orderManagementService/" xmlns:pref="http://www.example.org/orderManagmentSchema">
+    	<xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="orderManagmentSchema.xsd"/>
     	<xsd:element name="checkPrice">
     		<xsd:complexType>
     			<xsd:sequence>
-    				<xsd:element name="in" type="xsd:string" />
+    				<xsd:element name="in" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
     	<xsd:element name="checkPriceResponse">
     		<xsd:complexType>
     			<xsd:sequence>
-    				<xsd:element name="out" type="xsd:string" />
+    				<xsd:element name="out" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -22,7 +21,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    				<xsd:element name="in" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -30,7 +29,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    				<xsd:element name="out" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -38,7 +37,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    				<xsd:element name="in" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -46,7 +45,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    				<xsd:element name="out" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -54,7 +53,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    				<xsd:element name="in" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -62,7 +61,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    				<xsd:element name="out" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -70,7 +69,7 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    				<xsd:element name="in" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
@@ -78,73 +77,89 @@
     		<xsd:complexType>
     			<xsd:sequence>
 
-    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    				<xsd:element name="out" type="xsd:string"/>
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    	<xsd:import
-    		namespace="http://www.example.org/orderManagmentSchema"
-    		schemaLocation="orderManagmentSchema.xsd">
-    	</xsd:import>
-    </xsd:schema>
+    	<xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="orderManagmentSchema.xsd">
+    	</xsd:import></xsd:schema>
   </wsdl:types>
-  <wsdl:message name="checkPriceRequest">
-    <wsdl:part element="xsd1:checkPriceInput" name="parameters"/>
-  </wsdl:message>
   <wsdl:message name="checkPriceResponse">
-    <wsdl:part element="xsd1:checkPriceOutput" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="createOrderRequest">
-  	<wsdl:part name="parameters" element="xsd1:createOrderInput"></wsdl:part>
+    <wsdl:part name="parameters" element="xsd1:checkPriceOutput">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="createOrderResponse">
-  	<wsdl:part name="parameters" element="xsd1:createOrderOutput"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="cancelOrderRequest">
-  	<wsdl:part name="parameters" element="xsd1:cancelOrderInput"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="cancelOrderResponse">
-  	<wsdl:part name="parameters" element="xsd1:cancelOrderOutput"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateOrderRequest">
-  	<wsdl:part name="parameters" element="xsd1:updateOrderInput"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateOrderResponse">
-  	<wsdl:part name="parameters" element="xsd1:updateOrderOutput"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="orderStatusRequest">
-  	<wsdl:part name="parameters" element="xsd1:getOrderStatusInput"></wsdl:part>
+    <wsdl:part name="parameters" element="xsd1:createOrderOutput">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="orderStatusResponse">
-  	<wsdl:part name="parameters" element="xsd1:getOrderStatusOutput"></wsdl:part>
+    <wsdl:part name="parameters" element="xsd1:getOrderStatusOutput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderResponse">
+    <wsdl:part name="parameters" element="xsd1:updateOrderOutput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderStatusRequest">
+    <wsdl:part name="parameters" element="xsd1:getOrderStatusInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkPriceRequest">
+    <wsdl:part name="parameters" element="xsd1:checkPriceInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:createOrderInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:updateOrderInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:cancelOrderInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderResponse">
+    <wsdl:part name="parameters" element="xsd1:cancelOrderOutput">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="orderManagementService">
     <wsdl:operation name="checkPrice">
-      <wsdl:input message="tns:checkPriceRequest"/>
-      <wsdl:output message="tns:checkPriceResponse"/>
+      <wsdl:input message="tns:checkPriceRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:checkPriceResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="createOrder">
-    	<wsdl:input message="tns:createOrderRequest"></wsdl:input>
-    	<wsdl:output message="tns:createOrderResponse"></wsdl:output>
+      <wsdl:input message="tns:createOrderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createOrderResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="cancelOrder">
-    	<wsdl:input message="tns:cancelOrderRequest"></wsdl:input>
-    	<wsdl:output message="tns:cancelOrderResponse"></wsdl:output>
+      <wsdl:input message="tns:cancelOrderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:cancelOrderResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateOrder">
-    	<wsdl:input message="tns:updateOrderRequest"></wsdl:input>
-    	<wsdl:output message="tns:updateOrderResponse"></wsdl:output>
+      <wsdl:input message="tns:updateOrderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:updateOrderResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="orderStatus">
-    	<wsdl:input message="tns:orderStatusRequest"></wsdl:input>
-    	<wsdl:output message="tns:orderStatusResponse"></wsdl:output>
+      <wsdl:input message="tns:orderStatusRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:orderStatusResponse">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="orderManagementServiceSOAP" type="tns:orderManagementService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    
     <wsdl:operation name="checkPrice">
       <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
       <wsdl:input>
@@ -154,9 +169,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    
     <wsdl:operation name="createOrder">
-      <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
+      <soap:operation soapAction="http://www.example.org/orderManagementService/createOrder"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -164,9 +178,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    
-        <wsdl:operation name="cancelOrder">
-      <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
+    <wsdl:operation name="cancelOrder">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/cancelOrder"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -174,9 +187,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    
-        <wsdl:operation name="updateOrder">
-      <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/updateOrder"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -184,9 +196,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    
-        <wsdl:operation name="orderStatus">
-      <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
+    <wsdl:operation name="orderStatus">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/orderStatus"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -194,11 +205,10 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    
   </wsdl:binding>
   <wsdl:service name="orderManagementService">
-    <wsdl:port binding="tns:orderManagementServiceSOAP" name="orderManagementServiceSOAP">
-      <soap:address location="http://141.5.102.188:8888/AutoInc/services/orderManagementService"/>
+    <wsdl:port name="orderManagementServiceSOAP" binding="tns:orderManagementServiceSOAP">
+      <soap:address location="http://141.5.102.188:8888//AutoInc/services/orderManagementService/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
