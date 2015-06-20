@@ -208,7 +208,7 @@
   </wsdl:binding>
   <wsdl:service name="orderManagementService">
     <wsdl:port name="orderManagementServiceSOAP" binding="tns:orderManagementServiceSOAP">
-      <soap:address location="http://141.5.102.188:8888//AutoInc/services/orderManagementService/"/>
+      <soap:address location="http://localhost:8080/AutoInc/services/orderManagementService/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

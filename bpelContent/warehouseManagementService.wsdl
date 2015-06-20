@@ -231,7 +231,7 @@
   </wsdl:binding>
   <wsdl:service name="warehouseManagementService">
     <wsdl:port binding="tns:warehouseManagementServiceSOAP" name="warehouseManagementServiceSOAP">
-      <soap:address location="http://141.5.102.188:8888/AutoInc/services/warehouseManagementService"/>
+      <soap:address location="http://localhost:8080/AutoInc/services/warehouseManagementService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

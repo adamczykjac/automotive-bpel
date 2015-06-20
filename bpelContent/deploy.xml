@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:orderManagementService="http://www.example.org/orderManagementService/" xmlns:sample="http://eclipse.org/bpel/sample" xmlns:warehouseManagementService="http://www.example.org/warehouseManagementService/">
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:WarehouseDecisionWS="http://www.example.org/WarehouseDecisionWS/" xmlns:orderManagementService="http://www.example.org/orderManagementService/" xmlns:sample="http://eclipse.org/bpel/sample" xmlns:warehouseManagementService="http://www.example.org/warehouseManagementService/">
   <process name="sample:OrderingProcess">
     <active>true</active>
     <retired>false</retired>
@@ -12,6 +12,9 @@
     </invoke>
     <invoke partnerLink="WarehouseMgmtCheckAvailPL">
       <service name="warehouseManagementService:warehouseManagementService" port="warehouseManagementServiceSOAP"/>
+    </invoke>
+    <invoke partnerLink="DecisionPL">
+      <service name="WarehouseDecisionWS:WarehouseDecisionWS" port="WarehouseDecisionWSSOAP"/>
     </invoke>
   </process>
 </deploy>
