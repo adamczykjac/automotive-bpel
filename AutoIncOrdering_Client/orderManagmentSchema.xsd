@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/orderManagmentSchema" xmlns:tns="http://www.example.org/orderManagmentSchema" elementFormDefault="qualified">
+
+    <element name="checkPriceInput" type="tns:checkPriceInputType"></element>
+    
+    <complexType name="checkPriceInputType">
+    	<sequence>
+    		<element name="productIdAndQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="productIdQuantityType">
+    	<sequence>
+    		<element name="productId" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="productQuantity" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="checkPriceOutput" type="tns:checkPriceOutputType"></element>
+    
+    <complexType name="checkPriceOutputType">
+    	<sequence>
+    		<element name="price" type="int"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="createOrderInput" type="tns:createOrderInputType"></element>
+    
+    <complexType name="createOrderInputType">
+    	<sequence>
+    		<element name="retailCustomerId" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="orderProductAndQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="createOrderOutput"
+    	type="tns:createOrderOutputType">
+    </element>
+    
+    <complexType name="createOrderOutputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="cancelOrderInput" type="tns:cancelOrderInputType"></element>
+
+    <element name="cancelOrderOutput"
+    	type="tns:cancelOrderOutputType">
+    </element>
+    
+    <element name="updateOrderInput" type="tns:updateOrderInputType"></element>
+    
+    <element name="updateOrderOutput"
+    	type="tns:updateOrderOutputType">
+    </element>
+    
+    <element name="getOrderStatusInput"
+    	type="tns:getOrderStatusInputType">
+    </element>
+    
+    <element name="getOrderStatusOutput"
+    	type="tns:getOrderStatusOutputType">
+    </element>
+    
+    <complexType name="cancelOrderInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="cancelOrderOutputType">
+    	<sequence>
+    		<element name="cancellationResult" type="boolean" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="getOrderStatusInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="getOrderStatusOutputType">
+    	<sequence>
+    		<element name="orderStatus" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="updateOrderInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="productIdAndQuantity"
+    			type="tns:productIdQuantityType" maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="updateOrderOutputType">
+    	<sequence>
+    		<element name="updateOrderResult" type="boolean" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>
