@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TransportationManagementSchema" xmlns:tns="http://www.example.org/TransportationManagementSchema" elementFormDefault="qualified">
+
+    <element name="checkPriceInput" type="tns:checkPriceInputType"></element>
+    
+    <complexType name="checkPriceInputType">
+    	<sequence>
+    		<element name="totalWeight" type="float" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="distance" type="float" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="transportId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="checkPriceOutput" type="tns:checkPriceOutputType"></element>
+    
+    <complexType name="checkPriceOutputType">
+    	<sequence>
+    		<element name="price" type="float" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="transportId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="orderShipmentInput"
+    	type="tns:orderShipmentInputType">
+    </element>
+    
+    <complexType name="orderShipmentInputType">
+    	<sequence>
+    		<element name="orderId" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="transportId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="orderShipmentOutput"
+    	type="tns:orderShipmentOutputType">
+    </element>
+    
+    <complexType name="orderShipmentOutputType">
+    	<sequence>
+    		<element name="shipmentResult" type="boolean" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="transportId" type="int" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

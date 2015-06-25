@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/paymentManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="paymentManagementService" targetNamespace="http://www.example.org/paymentManagementService/" xmlns:xsd1="http://www.example.org/paymentManagementSchema">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://www.example.org/paymentManagementService/" xmlns:pref="http://www.example.org/paymentManagementSchema">
+    	<xsd:import schemaLocation="../AutoincSchemas/paymentManagementSchema.xsd" namespace="http://www.example.org/paymentManagementSchema"></xsd:import>
+    	<xsd:element name="NewOperation">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="in" type="xsd:string" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="NewOperationResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="out" type="xsd:string" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.example.org/paymentManagementSchema"
+    		schemaLocation="../AutoincSchemas/paymentManagementSchema.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="payRequest">
+    <wsdl:part element="xsd1:paymentInput" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="payResponse">
+    <wsdl:part element="xsd1:paymentOutput" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="paymentManagementService">
+    <wsdl:operation name="pay">
+      <wsdl:input message="tns:payRequest"/>
+      <wsdl:output message="tns:payResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="paymentManagementServiceSOAP" type="tns:paymentManagementService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pay">
+      <soap:operation soapAction="http://www.example.org/paymentManagementService/pay"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="paymentManagementService">
+    <wsdl:port binding="tns:paymentManagementServiceSOAP" name="paymentManagementServiceSOAP">
+      <soap:address location="http://localhost:8080/AutoInc/services/paymentManagementService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7c5d073a-0ac3-4f26-91ab-daa1f81c0eea" activeEnvironment="Default" name="orderManagementService" soapui-version="5.1.3" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1207600e-f394-4071-a336-b30dac203e4f" wsaVersion="NONE" name="orderManagementServiceSOAP" type="wsdl" bindingName="{http://www.example.org/orderManagementService/}orderManagementServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/AutoInc/services/orderManagementService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/AutoInc/services/orderManagementService?wsdl"><con:part><con:url>http://localhost:8080/AutoInc/services/orderManagementService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="orderManagementService" targetNamespace="http://www.example.org/orderManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/orderManagementService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/orderManagmentSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/orderManagementService/" xmlns:pref="http://www.example.org/orderManagmentSchema">
+      <xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="orderManagementService?xsd=orderManagmentSchema.xsd"/>
+      <xsd:element name="checkPrice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPriceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="orderManagementService?xsd=orderManagmentSchema.xsd"></xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="checkPriceResponse">
+    <wsdl:part name="parameters" element="xsd1:checkPriceOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createOrderResponse">
+    <wsdl:part name="parameters" element="xsd1:createOrderOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderStatusResponse">
+    <wsdl:part name="parameters" element="xsd1:getOrderStatusOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderResponse">
+    <wsdl:part name="parameters" element="xsd1:updateOrderOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderStatusRequest">
+    <wsdl:part name="parameters" element="xsd1:getOrderStatusInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkPriceRequest">
+    <wsdl:part name="parameters" element="xsd1:checkPriceInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:createOrderInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:updateOrderInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderRequest">
+    <wsdl:part name="parameters" element="xsd1:cancelOrderInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderResponse">
+    <wsdl:part name="parameters" element="xsd1:cancelOrderOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="orderManagementService">
+    <wsdl:operation name="checkPrice">
+      <wsdl:input message="tns:checkPriceRequest"></wsdl:input>
+      <wsdl:output message="tns:checkPriceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOrder">
+      <wsdl:input message="tns:createOrderRequest"></wsdl:input>
+      <wsdl:output message="tns:createOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <wsdl:input message="tns:cancelOrderRequest"></wsdl:input>
+      <wsdl:output message="tns:cancelOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input message="tns:updateOrderRequest"></wsdl:input>
+      <wsdl:output message="tns:updateOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderStatus">
+      <wsdl:input message="tns:orderStatusRequest"></wsdl:input>
+      <wsdl:output message="tns:orderStatusResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="orderManagementServiceSOAP" type="tns:orderManagementService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkPrice">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/checkPrice"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOrder">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/createOrder"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/cancelOrder"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/updateOrder"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderStatus">
+      <soap:operation soapAction="http://www.example.org/orderManagementService/orderStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="orderManagementService">
+    <wsdl:port name="orderManagementServiceSOAP" binding="tns:orderManagementServiceSOAP">
+      <soap:address location="http://localhost:8080/AutoInc/services/orderManagementService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/AutoInc/services/orderManagementService?xsd=orderManagmentSchema.xsd</con:url><con:content><![CDATA[<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/orderManagmentSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/orderManagmentSchema">
+  <element name="checkPriceInput" type="tns:checkPriceInputType"/>
+  <complexType name="checkPriceInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <complexType name="productIdQuantityType">
+    <sequence>
+      <element name="productId" type="int"/>
+      <element name="productQuantity" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="checkPriceOutput" type="tns:checkPriceOutputType"/>
+  <complexType name="checkPriceOutputType">
+    <sequence>
+      <element name="price" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="createOrderInput" type="tns:createOrderInputType"/>
+  <complexType name="createOrderInputType">
+    <sequence>
+      <element name="retailCustomerId" type="int"/>
+      <element maxOccurs="unbounded" name="orderProductAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <element name="createOrderOutput" type="tns:createOrderOutputType"/>
+  <complexType name="createOrderOutputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="cancelOrderInput" type="tns:cancelOrderInputType"/>
+  <element name="cancelOrderOutput" type="tns:cancelOrderOutputType"/>
+  <element name="updateOrderInput" type="tns:updateOrderInputType"/>
+  <element name="updateOrderOutput" type="tns:updateOrderOutputType"/>
+  <element name="getOrderStatusInput" type="tns:getOrderStatusInputType"/>
+  <element name="getOrderStatusOutput" type="tns:getOrderStatusOutputType"/>
+  <complexType name="cancelOrderInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="cancelOrderOutputType">
+    <sequence>
+      <element name="cancellationResult" type="boolean"/>
+    </sequence>
+  </complexType>
+  <complexType name="getOrderStatusInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="getOrderStatusOutputType">
+    <sequence>
+      <element name="orderStatus" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateOrderInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateOrderOutputType">
+    <sequence>
+      <element name="updateOrderResult" type="boolean"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint></con:endpoints><con:operation id="3b513f25-4a8a-4a01-a8f3-ad7e7fc11a1d" isOneWay="false" action="http://www.example.org/orderManagementService/cancelOrder" name="cancelOrder" bindingOperationName="cancelOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b30e17d0-e47f-42fd-b49e-2fca99a01ac7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:cancelOrderInput>
+         <ord:orderId>?</ord:orderId>
+      </ord:cancelOrderInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/orderManagementService/cancelOrder"/></con:call></con:operation><con:operation id="c8e195c2-5221-4acc-adca-fffbafe87f4c" isOneWay="false" action="http://www.example.org/orderManagementService/checkPrice" name="checkPrice" bindingOperationName="checkPrice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca148070-4b75-42ab-b764-37c34e04a3af" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:checkPriceInput>
+         <!--1 or more repetitions:-->
+         <ord:productIdAndQuantity>
+            <ord:productId>?</ord:productId>
+            <ord:productQuantity>?</ord:productQuantity>
+         </ord:productIdAndQuantity>
+      </ord:checkPriceInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/orderManagementService/checkPrice"/></con:call></con:operation><con:operation id="2a62d688-ae11-42c8-9f0e-76404c236019" isOneWay="false" action="http://www.example.org/orderManagementService/createOrder" name="createOrder" bindingOperationName="createOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="92a403a2-36d5-49fd-815d-286d8b5d0b2a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:createOrderInput>
+         <ord:retailCustomerId>1</ord:retailCustomerId>
+         <!--1 or more repetitions:-->
+         <ord:orderProductAndQuantity>
+            <ord:productId>1</ord:productId>
+            <ord:productQuantity>10</ord:productQuantity>
+         </ord:orderProductAndQuantity>
+      </ord:createOrderInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/orderManagementService/createOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="17eb2290-4d9f-4b91-9457-bdd93948652b" isOneWay="false" action="http://www.example.org/orderManagementService/orderStatus" name="orderStatus" bindingOperationName="orderStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a39bd6b8-a53f-41aa-9a8b-ee6ea8e81024" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:getOrderStatusInput>
+         <ord:orderId>?</ord:orderId>
+      </ord:getOrderStatusInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/orderManagementService/orderStatus"/></con:call></con:operation><con:operation id="3eeb28dc-2d93-4620-a3f9-a8a9fef5e507" isOneWay="false" action="http://www.example.org/orderManagementService/updateOrder" name="updateOrder" bindingOperationName="updateOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="687772bc-79b7-4f63-911c-4f42ecb1f1ba" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/orderManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:updateOrderInput>
+         <ord:orderId>124</ord:orderId>
+         <!--1 or more repetitions:-->
+         <ord:productIdAndQuantity>
+            <ord:productId>1</ord:productId>
+            <ord:productQuantity>2</ord:productQuantity>
+         </ord:productIdAndQuantity>
+      </ord:updateOrderInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/orderManagementService/updateOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

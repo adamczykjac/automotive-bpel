@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="007eabd9-fbb1-497d-af5a-65783e6641f3" activeEnvironment="Default" name="warehouseManagementService" soapui-version="5.1.3" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f4bf32d0-b747-43e8-be79-bea11ea7c8a5" wsaVersion="NONE" name="warehouseManagementServiceSOAP" type="wsdl" bindingName="{http://www.example.org/warehouseManagementService/}warehouseManagementServiceSOAP" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/AutoInc/services/warehouseManagementService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/AutoInc/services/warehouseManagementService?wsdl"><con:part><con:url>http://localhost:8080/AutoInc/services/warehouseManagementService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="warehouseManagementService" targetNamespace="http://www.example.org/warehouseManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/warehouseManagementService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/WarehouseManagementSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/warehouseManagementService/" xmlns:pref="http://www.example.org/WarehouseManagementSchema">
+      <xsd:import namespace="http://www.example.org/WarehouseManagementSchema" schemaLocation="warehouseManagementService?xsd=warehouseManagementSchema.xsd"/>
+      <xsd:element name="checkAvailability">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkAvailabilityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reserveProducts">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reserveProductsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReservation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReservationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDistance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDistanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productsNotAvailable" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationFault1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateReservationFault" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="decideUponWarehouse" type="pref:decideUponWarehouseInputType"></xsd:element>
+      <xsd:element name="decideUponWarehouseResponse" type="pref:decideUponWarehouseOutputType"></xsd:element>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.example.org/WarehouseManagementSchema" schemaLocation="warehouseManagementService?xsd=warehouseManagementSchema.xsd"></xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="checkDistanceRequest">
+    <wsdl:part name="parameters" element="xsd1:checkDistanceInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationRequest">
+    <wsdl:part name="parameters" element="xsd1:updateReservationInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationResponse">
+    <wsdl:part name="parameters" element="xsd1:updateReservationOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkAvailabilityResponse">
+    <wsdl:part name="parameters" element="xsd1:checkAvailabilityOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reserveProductsRequest">
+    <wsdl:part name="parameters" element="xsd1:reserveProductsInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decideUponWarehouseResponse">
+    <wsdl:part name="parameters" element="tns:decideUponWarehouseResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationFault">
+    <wsdl:part name="parameters" element="tns:updateReservationFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decideUponWarehouseRequest">
+    <wsdl:part name="parameters" element="tns:decideUponWarehouse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationFault1">
+    <wsdl:part name="parameters" element="tns:updateReservationFault1"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelReservationRequest">
+    <wsdl:part name="parameters" element="xsd1:cancelReservationInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelReservationResponse">
+    <wsdl:part name="parameters" element="xsd1:cancelReservationOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkDistanceResponse">
+    <wsdl:part name="parameters" element="xsd1:checkDistanceOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reserveProductsResponse">
+    <wsdl:part name="parameters" element="xsd1:reserveProductsOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkAvailabilityRequest">
+    <wsdl:part name="parameters" element="xsd1:checkAvailabilityInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="warehouseManagementService">
+    <wsdl:operation name="checkAvailability">
+      <wsdl:input message="tns:checkAvailabilityRequest"></wsdl:input>
+      <wsdl:output message="tns:checkAvailabilityResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reserveProducts">
+      <wsdl:input message="tns:reserveProductsRequest"></wsdl:input>
+      <wsdl:output message="tns:reserveProductsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+      <wsdl:input message="tns:cancelReservationRequest"></wsdl:input>
+      <wsdl:output message="tns:cancelReservationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateReservation">
+      <wsdl:input message="tns:updateReservationRequest"></wsdl:input>
+      <wsdl:output message="tns:updateReservationResponse"></wsdl:output>
+      <wsdl:fault name="ProductsNotAvailable" message="tns:updateReservationFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkDistance">
+      <wsdl:input message="tns:checkDistanceRequest"></wsdl:input>
+      <wsdl:output message="tns:checkDistanceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decideUponWarehouse">
+      <wsdl:input message="tns:decideUponWarehouseRequest"></wsdl:input>
+      <wsdl:output message="tns:decideUponWarehouseResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="warehouseManagementServiceSOAP" type="tns:warehouseManagementService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkAvailability">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/checkAvailability"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reserveProducts">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/reserveProducts"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/cancelReservation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateReservation">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/updateReservation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductsNotAvailable">
+        <soap:fault name="ProductsNotAvailable" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkDistance">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/checkDistance"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decideUponWarehouse">
+      <soap:operation soapAction="http://www.example.org/warehouseManagementService/decideUponWarehouse"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="warehouseManagementService">
+    <wsdl:port name="warehouseManagementServiceSOAP" binding="tns:warehouseManagementServiceSOAP">
+      <soap:address location="http://localhost:8080/AutoInc/services/warehouseManagementService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/AutoInc/services/warehouseManagementService?xsd=warehouseManagementSchema.xsd</con:url><con:content><![CDATA[<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/WarehouseManagementSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/WarehouseManagementSchema">
+  <element name="checkAvailabilityOutput" type="tns:checkAvailabilityOutputType"/>
+  <element name="checkAvailabilityInput" type="tns:checkAvailabilityInputType"/>
+  <complexType name="checkAvailabilityInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkAvailabilityOutputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdAvailableQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="productIdQuantityType">
+    <sequence>
+      <element name="productId" type="int"/>
+      <element name="productQuantity" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="reserveProductsInput" type="tns:reserveProductsInputType"/>
+  <element name="reserveProductsOutput" type="tns:reserveProductsOutputType"/>
+  <complexType name="reserveProductsInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="reserveProductsOutputType">
+    <sequence>
+      <element name="reservationResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="cancelReservationInput" type="tns:cancelReservationInputType"/>
+  <element name="cancelReservationOutput" type="tns:cancelReservationOutputType"/>
+  <element name="updateReservationInput" type="tns:updateReservationInputType"/>
+  <element name="updateReservationOutput" type="tns:updateReservationOutputType"/>
+  <element name="checkDistanceInput" type="tns:checkDistanceInputType"/>
+  <element name="checkDistanceOutput" type="tns:checkDistanceOutputType"/>
+  <complexType name="cancelReservationInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="cancelReservationOutputType">
+    <sequence>
+      <element name="CancellationResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkDistanceOutputType">
+    <sequence>
+      <element name="distance" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkDistanceInputType">
+    <sequence>
+      <element name="customerRegionId" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateReservationInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateReservationOutputType">
+    <sequence>
+      <element name="updateResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="decideUponWarehouseInput" type="tns:decideUponWarehouseInputType"/>
+  <complexType name="decideUponWarehouseInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="orderChunkAvailable" type="tns:checkAvailabilityOutputType"/>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="decideUponWarehouseOutput" type="tns:decideUponWarehouseOutputType"/>
+  <complexType name="decideUponWarehouseOutputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="orderChunkToBook" type="tns:checkAvailabilityOutputType"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint></con:endpoints><con:operation id="469edacd-8547-4b90-897e-4c5a7227f534" isOneWay="false" action="http://www.example.org/warehouseManagementService/cancelReservation" name="cancelReservation" bindingOperationName="cancelReservation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b1f6d7dc-bb44-4c96-86f6-d2bc421c9645" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:cancelReservationInput>
+         <war:orderId>?</war:orderId>
+         <war:warehouseId>?</war:warehouseId>
+      </war:cancelReservationInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/cancelReservation"/></con:call></con:operation><con:operation id="d5b73448-c2c7-40aa-9142-c1c36734b378" isOneWay="false" action="http://www.example.org/warehouseManagementService/checkAvailability" name="checkAvailability" bindingOperationName="checkAvailability" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9b99e24c-7e59-4152-be30-109dc05e199b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:checkAvailabilityInput>
+         <!--1 or more repetitions:-->
+         <war:productIdQuantity>
+            <war:productId>?</war:productId>
+            <war:productQuantity>?</war:productQuantity>
+         </war:productIdQuantity>
+         <war:warehouseId>?</war:warehouseId>
+      </war:checkAvailabilityInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/checkAvailability"/></con:call></con:operation><con:operation id="31474b4b-8b62-4cb2-b467-a4873cbe545e" isOneWay="false" action="http://www.example.org/warehouseManagementService/checkDistance" name="checkDistance" bindingOperationName="checkDistance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2e854491-8c07-4c6c-b074-d83aaf76d19b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:checkDistanceInput>
+         <war:customerRegionId>?</war:customerRegionId>
+         <war:warehouseId>?</war:warehouseId>
+      </war:checkDistanceInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/checkDistance"/></con:call></con:operation><con:operation id="1adcfe3b-5cb3-46bb-adde-1a109c2c9ea0" isOneWay="false" action="http://www.example.org/warehouseManagementService/decideUponWarehouse" name="decideUponWarehouse" bindingOperationName="decideUponWarehouse" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5efc715e-cc3e-4f4b-9378-321afbb82fba" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/warehouseManagementService/" xmlns:war1="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:decideUponWarehouse>
+         <!--1 or more repetitions:-->
+         <war1:orderChunkAvailable>
+            <!--1 or more repetitions:-->
+            <war1:productIdAvailableQuantity>
+               <war1:productId>1</war1:productId>
+               <war1:productQuantity>1</war1:productQuantity>
+            </war1:productIdAvailableQuantity>
+            <war1:warehouseId>1</war1:warehouseId>
+         </war1:orderChunkAvailable>
+         <war1:orderId>124</war1:orderId>
+      </war:decideUponWarehouse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/decideUponWarehouse"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f55104d4-538f-4cd4-8fdf-ea196556091a" isOneWay="false" action="http://www.example.org/warehouseManagementService/reserveProducts" name="reserveProducts" bindingOperationName="reserveProducts" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2497270d-82d1-402e-9f50-c2bfffd92309" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:reserveProductsInput>
+         <war:orderId>?</war:orderId>
+         <!--1 or more repetitions:-->
+         <war:productIdQuantity>
+            <war:productId>?</war:productId>
+            <war:productQuantity>?</war:productQuantity>
+         </war:productIdQuantity>
+         <war:warehouseId>?</war:warehouseId>
+      </war:reserveProductsInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/reserveProducts"/></con:call></con:operation><con:operation id="e4d97a0b-3f51-4f65-a401-16a35430f8da" isOneWay="false" action="http://www.example.org/warehouseManagementService/updateReservation" name="updateReservation" bindingOperationName="updateReservation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9fcf6a92-44d6-4355-847f-1159e3490c8a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/AutoInc/services/warehouseManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:war="http://www.example.org/WarehouseManagementSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <war:updateReservationInput>
+         <war:orderId>?</war:orderId>
+         <!--1 or more repetitions:-->
+         <war:productIdQuantity>
+            <war:productId>?</war:productId>
+            <war:productQuantity>?</war:productQuantity>
+         </war:productIdQuantity>
+         <war:warehouseId>?</war:warehouseId>
+      </war:updateReservationInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/warehouseManagementService/updateReservation"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

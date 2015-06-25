@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/warehouseManagementService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="warehouseManagementService" targetNamespace="http://www.example.org/warehouseManagementService/" xmlns:xsd1="http://www.example.org/WarehouseManagementSchema">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://www.example.org/warehouseManagementService/" xmlns:pref="http://www.example.org/WarehouseManagementSchema">
+    	<xsd:import schemaLocation="../AutoincSchemas/warehouseManagementSchema.xsd" namespace="http://www.example.org/WarehouseManagementSchema"></xsd:import>
+    	<xsd:element name="checkAvailability">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="in" type="xsd:string" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="checkAvailabilityResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="out" type="xsd:string" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="reserveProducts">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="reserveProductsResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="cancelReservation">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="cancelReservationResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="updateReservation">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="updateReservationResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="checkDistance">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="in" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="checkDistanceResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="out" type="xsd:string"></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="updateReservationFault">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="productsNotAvailable"
+    					type="xsd:string">
+    				</xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="updateReservationFault1">
+    		<xsd:complexType>
+    			<xsd:sequence>
+
+    				<xsd:element name="updateReservationFault"
+    					type="xsd:string">
+    				</xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="decideUponWarehouse"
+    		type="pref:decideUponWarehouseInputType">
+
+    	</xsd:element>
+    	<xsd:element name="decideUponWarehouseResponse"
+    		type="pref:decideUponWarehouseOutputType">
+
+    	</xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.example.org/WarehouseManagementSchema"
+    		schemaLocation="../AutoincSchemas/warehouseManagementSchema.xsd">
+    	</xsd:import>
+    	</xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="checkAvailabilityRequest">
+    <wsdl:part element="xsd1:checkAvailabilityInput" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="checkAvailabilityResponse">
+    <wsdl:part element="xsd1:checkAvailabilityOutput" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="reserveProductsRequest">
+  	<wsdl:part name="parameters" element="xsd1:reserveProductsInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reserveProductsResponse">
+  	<wsdl:part name="parameters" element="xsd1:reserveProductsOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelReservationRequest">
+  	<wsdl:part name="parameters" element="xsd1:cancelReservationInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelReservationResponse">
+  	<wsdl:part name="parameters" element="xsd1:cancelReservationOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationRequest">
+  	<wsdl:part name="parameters" element="xsd1:updateReservationInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationResponse">
+  	<wsdl:part name="parameters" element="xsd1:updateReservationOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkDistanceRequest">
+  	<wsdl:part name="parameters" element="xsd1:checkDistanceInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkDistanceResponse">
+  	<wsdl:part name="parameters" element="xsd1:checkDistanceOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationFault">
+  	<wsdl:part name="parameters" element="tns:updateReservationFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateReservationFault1">
+  	<wsdl:part name="parameters" element="tns:updateReservationFault1"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decideUponWarehouseRequest">
+  	<wsdl:part name="parameters" element="tns:decideUponWarehouse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decideUponWarehouseResponse">
+  	<wsdl:part name="parameters" element="tns:decideUponWarehouseResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="warehouseManagementService">
+    <wsdl:operation name="checkAvailability">
+      <wsdl:input message="tns:checkAvailabilityRequest"/>
+      <wsdl:output message="tns:checkAvailabilityResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="reserveProducts">
+    	<wsdl:input message="tns:reserveProductsRequest"></wsdl:input>
+    	<wsdl:output message="tns:reserveProductsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+    	<wsdl:input message="tns:cancelReservationRequest"></wsdl:input>
+    	<wsdl:output message="tns:cancelReservationResponse"></wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="updateReservation">
+    	<wsdl:input message="tns:updateReservationRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateReservationResponse"></wsdl:output>
+            <wsdl:fault name="ProductsNotAvailable" message="tns:updateReservationFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="checkDistance">
+    	<wsdl:input message="tns:checkDistanceRequest"></wsdl:input>
+    	<wsdl:output message="tns:checkDistanceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decideUponWarehouse">
+    	<wsdl:input message="tns:decideUponWarehouseRequest"></wsdl:input>
+    	<wsdl:output message="tns:decideUponWarehouseResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="warehouseManagementServiceSOAP"
+  	type="tns:warehouseManagementService">
+
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="checkAvailability">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/checkAvailability" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="reserveProducts">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/reserveProducts" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="cancelReservation">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/cancelReservation" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="updateReservation">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/updateReservation" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  		<wsdl:fault name="ProductsNotAvailable">
+
+  			<soap:fault use="literal" name="ProductsNotAvailable" />
+  		</wsdl:fault>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="checkDistance">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/checkDistance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="decideUponWarehouse">
+  		<soap:operation
+  			soapAction="http://www.example.org/warehouseManagementService/decideUponWarehouse" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="warehouseManagementService">
+    <wsdl:port binding="tns:warehouseManagementServiceSOAP" name="warehouseManagementServiceSOAP">
+      <soap:address location="http://localhost:8080/AutoInc/services/warehouseManagementService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

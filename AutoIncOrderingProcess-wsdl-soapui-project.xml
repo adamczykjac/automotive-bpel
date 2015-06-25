@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ba87155d-90a2-4ee4-a530-f0cd8a940271" activeEnvironment="Default" name="AutoIncOrderingProcess?wsdl" soapui-version="5.1.3" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="40b98c7f-3f8a-4620-8728-f5fc1ab3d524" wsaVersion="NONE" name="AutoIncOrderingProcessBinding" type="wsdl" bindingName="{http://sample.bpel.org/bpel/sample}AutoIncOrderingProcessBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ode/processes/AutoIncOrderingProcess?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ode/processes/AutoIncOrderingProcess?wsdl"><con:part><con:url>http://localhost:8080/ode/processes/AutoIncOrderingProcess?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://sample.bpel.org/bpel/sample" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl1="http://www.example.org/warehouseManagementService/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsd="http://www.example.org/orderManagmentSchema" xmlns:xsd1="http://www.example.org/WarehouseManagementSchema" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://sample.bpel.org/bpel/sample" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://www.example.org/orderManagementService/">
+      <element name="AutoIncOrderingProcessRequest">
+        <complexType>
+          <sequence>
+            <element name="input" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AutoIncOrderingProcessResponse">
+        <complexType>
+          <sequence>
+            <element name="result" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://www.example.org/orderManagementService/">
+      <xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="AutoIncOrderingProcess?xsd=orderManagmentSchema.xsd"/>
+      <xsd:import namespace="http://www.example.org/WarehouseManagementSchema" schemaLocation="AutoIncOrderingProcess?xsd=warehouseManagementSchema.xsd"/>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.example.org/warehouseManagementService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/warehouseManagementService/" xmlns:pref="http://www.example.org/WarehouseManagementSchema">
+      <xsd:import namespace="http://www.example.org/WarehouseManagementSchema" schemaLocation="AutoIncOrderingProcess?xsd=warehouseManagementSchema.xsd"/>
+      <xsd:element name="checkAvailability">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkAvailabilityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reserveProducts">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="reserveProductsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReservation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReservationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDistance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkDistanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productsNotAvailable" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateReservationFault1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateReservationFault" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="decideUponWarehouse" type="xsd1:decideUponWarehouseInputType"/>
+      <xsd:element name="decideUponWarehouseResponse" type="xsd1:decideUponWarehouseOutputType"/>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/warehouseManagementService/">
+      <xsd:import namespace="http://www.example.org/WarehouseManagementSchema" schemaLocation="AutoIncOrderingProcess?xsd=warehouseManagementSchema.xsd"/>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.example.org/orderManagementService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/orderManagementService/" xmlns:xsd1="http://www.example.org/orderManagmentSchema" xmlns:pref="http://www.example.org/orderManagmentSchema">
+      <xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="AutoIncOrderingProcess?xsd=orderManagmentSchema.xsd"/>
+      <xsd:element name="checkPrice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPriceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/orderManagementService/" xmlns:xsd1="http://www.example.org/orderManagmentSchema">
+      <xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="AutoIncOrderingProcess?xsd=orderManagmentSchema.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AutoIncOrderingProcessRequestMessage">
+    <wsdl:part name="payload" element="xsd:createOrderInput"/>
+  </wsdl:message>
+  <wsdl:message name="AutoIncOrderingProcessResponseMessage">
+    <wsdl:part name="payload" element="xsd1:checkAvailabilityOutput"/>
+  </wsdl:message>
+  <wsdl:portType name="AutoIncOrderingProcessPortType">
+    <wsdl:operation name="process">
+      <wsdl:input message="tns:AutoIncOrderingProcessRequestMessage" wsaw:Action="http://sample.bpel.org/bpel/sample/process"/>
+      <wsdl:output message="tns:AutoIncOrderingProcessResponseMessage" wsaw:Action="http://sample.bpel.org/bpel/sample/AutoIncOrderingProcess/processResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoIncOrderingProcessBinding" type="tns:AutoIncOrderingProcessPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="process">
+      <soap:operation soapAction="http://sample.bpel.org/bpel/sample/process" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoIncOrderingProcess">
+    <wsdl:port name="AutoIncOrderingProcessPort" binding="tns:AutoIncOrderingProcessBinding">
+      <soap:address location="http://localhost:8080//AutoIncOrderingProcess.AutoIncOrderingProcessPort/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/ode/processes/AutoIncOrderingProcess?xsd=orderManagmentSchema.xsd</con:url><con:content><![CDATA[<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/orderManagmentSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/orderManagmentSchema">
+  <element name="checkPriceInput" type="tns:checkPriceInputType"/>
+  <complexType name="checkPriceInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <complexType name="productIdQuantityType">
+    <sequence>
+      <element name="productId" type="int"/>
+      <element name="productQuantity" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="checkPriceOutput" type="tns:checkPriceOutputType"/>
+  <complexType name="checkPriceOutputType">
+    <sequence>
+      <element name="price" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="createOrderInput" type="tns:createOrderInputType"/>
+  <complexType name="createOrderInputType">
+    <sequence>
+      <element name="retailCustomerId" type="int"/>
+      <element maxOccurs="unbounded" name="orderProductAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <element name="createOrderOutput" type="tns:createOrderOutputType"/>
+  <complexType name="createOrderOutputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="cancelOrderInput" type="tns:cancelOrderInputType"/>
+  <element name="cancelOrderOutput" type="tns:cancelOrderOutputType"/>
+  <element name="updateOrderInput" type="tns:updateOrderInputType"/>
+  <element name="updateOrderOutput" type="tns:updateOrderOutputType"/>
+  <element name="getOrderStatusInput" type="tns:getOrderStatusInputType"/>
+  <element name="getOrderStatusOutput" type="tns:getOrderStatusOutputType"/>
+  <complexType name="cancelOrderInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="cancelOrderOutputType">
+    <sequence>
+      <element name="cancellationResult" type="boolean"/>
+    </sequence>
+  </complexType>
+  <complexType name="getOrderStatusInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="getOrderStatusOutputType">
+    <sequence>
+      <element name="orderStatus" type="string"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateOrderInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdAndQuantity" type="tns:productIdQuantityType"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateOrderOutputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ode/processes/AutoIncOrderingProcess?xsd=warehouseManagementSchema.xsd</con:url><con:content><![CDATA[<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/WarehouseManagementSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.example.org/orderManagmentSchema" xmlns:tns="http://www.example.org/WarehouseManagementSchema">
+  <import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="AutoIncOrderingProcess?xsd=orderManagmentSchema.xsd"/>
+  <element name="checkAvailabilityOutput" type="tns:checkAvailabilityOutputType"/>
+  <element name="checkAvailabilityInput" type="tns:checkAvailabilityInputType"/>
+  <complexType name="checkAvailabilityInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkAvailabilityOutputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="productIdAvailableQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="productIdQuantityType">
+    <sequence>
+      <element name="productId" type="int"/>
+      <element name="productQuantity" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="reserveProductsInput" type="tns:reserveProductsInputType"/>
+  <element name="reserveProductsOutput" type="tns:reserveProductsOutputType"/>
+  <complexType name="reserveProductsInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="reserveProductsOutputType">
+    <sequence>
+      <element name="reservationResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="cancelReservationInput" type="tns:cancelReservationInputType"/>
+  <element name="cancelReservationOutput" type="tns:cancelReservationOutputType"/>
+  <element name="updateReservationInput" type="tns:updateReservationInputType"/>
+  <element name="updateReservationOutput" type="tns:updateReservationOutputType"/>
+  <element name="checkDistanceInput" type="tns:checkDistanceInputType"/>
+  <element name="checkDistanceOutput" type="tns:checkDistanceOutputType"/>
+  <complexType name="cancelReservationInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="cancelReservationOutputType">
+    <sequence>
+      <element name="CancellationResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkDistanceOutputType">
+    <sequence>
+      <element name="distance" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="checkDistanceInputType">
+    <sequence>
+      <element name="customerRegionId" type="int"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateReservationInputType">
+    <sequence>
+      <element name="orderId" type="int"/>
+      <element maxOccurs="unbounded" name="productIdQuantity" type="tns:productIdQuantityType"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="updateReservationOutputType">
+    <sequence>
+      <element name="updateResult" type="boolean"/>
+      <element name="warehouseId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="decideUponWarehouseInput" type="Q1:createOrderInputType"/>
+  <complexType name="decideUponWarehouseInputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="orderChunkAvailable" type="tns:checkAvailabilityOutputType"/>
+      <element name="orderId" type="int"/>
+    </sequence>
+  </complexType>
+  <element name="decideUponWarehouseOutput" type="tns:decideUponWarehouseOutputType"/>
+  <complexType name="decideUponWarehouseOutputType">
+    <sequence>
+      <element maxOccurs="unbounded" name="orderChunkToBook" type="tns:checkAvailabilityOutputType"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080//AutoIncOrderingProcess.AutoIncOrderingProcessPort/</con:endpoint></con:endpoints><con:operation id="52d6e80c-e32d-485f-9135-da072e43c8b3" isOneWay="false" action="http://sample.bpel.org/bpel/sample/process" name="process" bindingOperationName="process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a197e870-0350-46d0-8460-c7b08962ae3b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ode/processes/AutoIncOrderingProcess.AutoIncOrderingProcessPort/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ord="http://www.example.org/orderManagmentSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ord:createOrderInput>
+         <ord:retailCustomerId>1</ord:retailCustomerId>
+         <!--1 or more repetitions:-->
+         <ord:orderProductAndQuantity>
+            <ord:productId>1</ord:productId>
+            <ord:productQuantity>10</ord:productQuantity>
+         </ord:orderProductAndQuantity>
+      </ord:createOrderInput>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sample.bpel.org/bpel/sample/process"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
