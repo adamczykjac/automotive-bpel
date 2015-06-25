@@ -17,15 +17,15 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.11"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
     <extendedObject href="AutoIncOrderingProcess.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1435250173000"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1435253832000"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -37,15 +37,11 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@copy.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -73,11 +69,11 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -89,27 +85,11 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5/@copy.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5/@copy.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5/@copy.2"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.5/@copy.3"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.1/@activities.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.1/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -121,43 +101,43 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7/@copy.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6/@copy.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7/@copy.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7/@copy.2"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6/@copy.2"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.7/@copy.3"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.6/@copy.3"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" width="556" height="200"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="-14" y="36"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.1/@activities.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.1/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.0/@activities.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.0/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.0/@activities.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.0/@activities.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="262" y="36"/>
   </extensions>
   <extensions>
@@ -177,39 +157,107 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.1/@activities.0/@copy.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.1/@activities.0/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@activity"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activity"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@else/@activity"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@else/@activity"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@activity/@copy.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activity/@copy.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@activity/@copy.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activity/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@else/@activity/@copy.1"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@else/@activity/@copy.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.10/@else/@activity/@copy.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@else/@activity/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.9/@activities.0/@activities.0/@copy.0"/>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.8/@activities.0/@activities.0/@copy.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" width="433" height="162"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" y="9"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension" x="189" y="3"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0/@activities.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0/@activities.1"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1/@activities.0/@copy.1"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1/@activities.0/@copy.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.1/@activities.0/@copy.2"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@variables/@children.14"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@variables/@children.15"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0/@activities.0/@copy.1"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0/@activities.0/@copy.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.3/@activities.0/@activities.0/@copy.2"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4/@copy.1"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4/@copy.2"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4/@copy.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="AutoIncOrderingProcess.bpel#//@activity/@activities.4/@copy.3"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
 </extensionmodel:ExtensionMap>
