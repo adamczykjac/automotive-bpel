@@ -63,6 +63,11 @@
         <bpel:variable name="transportationMgmtPLResponse2" messageType="ns2:checkPriceResponse"></bpel:variable>
         <bpel:variable name="warehouseMgmtPLRequest_W2" messageType="ns0:checkAvailabilityRequest"></bpel:variable>
         <bpel:variable name="warehouseMgmtPLResponse_W2" messageType="ns0:checkAvailabilityResponse"></bpel:variable>
+        <bpel:variable name="output_fault" messageType="ns:createOrderFault"></bpel:variable>
+        <bpel:variable name="transportationMgmtPLResponse1" messageType="ns2:orderShipmentResponse"></bpel:variable>
+        <bpel:variable name="transportationMgmtPLRequest1" messageType="ns2:orderShipmentRequest"></bpel:variable>
+        <bpel:variable name="transportationMgmtPLRequest12" messageType="ns2:orderShipmentRequest"></bpel:variable>
+        <bpel:variable name="transportationMgmtPLResponse12" messageType="ns2:orderShipmentResponse"></bpel:variable>
     </bpel:variables>
 
     <!-- ================================================================= -->         
@@ -98,7 +103,18 @@
                 <bpel:to part="parameters" variable="orderMgmtPLRequest"></bpel:to>
             </bpel:copy>
         </bpel:assign>
-        <bpel:invoke name="createOrder" partnerLink="orderMgmtPL" operation="createOrder" portType="ns:orderManagementService" inputVariable="orderMgmtPLRequest" outputVariable="orderMgmtPLResponse"></bpel:invoke>
+        <bpel:invoke name="createOrder" partnerLink="orderMgmtPL" operation="createOrder" portType="ns:orderManagementService" inputVariable="orderMgmtPLRequest" outputVariable="orderMgmtPLResponse"><bpel:catch faultName="ns:IdNotFound"><bpel:sequence><bpel:assign validate="no" name="Assign8">
+                        
+                        
+                        <bpel:copy>
+                            <bpel:from><bpel:literal xml:space="preserve"><tns:AutoIncOrderingProcessResponse xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:result>One of input ids does not exist.</tns:result>
+</tns:AutoIncOrderingProcessResponse>
+</bpel:literal></bpel:from>
+                            <bpel:to variable="output" part="payload"></bpel:to>
+                        </bpel:copy>
+                        
+                    </bpel:assign><bpel:reply name="Reply" partnerLink="client" operation="process" portType="tns:AutoIncOrderingProcess" variable="output"></bpel:reply></bpel:sequence></bpel:catch></bpel:invoke>
         
         
         
@@ -331,44 +347,310 @@
             </bpel:sequence></bpel:flow>
         <bpel:if name="If">
             <bpel:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[$transportationMgmtPLResponse.parameters/price >= $transportationMgmtPLResponse2.parameters/price]]></bpel:condition>
-            <bpel:assign validate="no" name="Assign6">
-                <bpel:copy>
-                    <bpel:from><bpel:literal><tns:checkPriceOutput xmlns:tns="http://www.example.org/TransportationManagementSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <tns:price>0.0</tns:price>
-  <tns:transportId>0</tns:transportId>
-</tns:checkPriceOutput>
+            <bpel:sequence>
+                <bpel:assign validate="no" name="Assign6">
+                
+                
+                    <bpel:copy>
+                        <bpel:from><bpel:literal xml:space="preserve"><tns:orderShipmentInput xmlns:tns="http://www.example.org/TransportationManagementSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:orderId>0</tns:orderId>
+  <tns:transportId>1</tns:transportId>
+</tns:orderShipmentInput>
 </bpel:literal></bpel:from>
-                    <bpel:to variable="output" part="payload"></bpel:to>
-                </bpel:copy>
-                <bpel:copy>
-                    <bpel:from part="parameters" variable="transportationMgmtPLResponse"></bpel:from>
-                    <bpel:to part="payload" variable="output"></bpel:to>
-                </bpel:copy>
-            </bpel:assign>
-            <bpel:else>
-                <bpel:assign validate="no" name="Assign7">
+                        <bpel:to part="parameters" variable="transportationMgmtPLRequest1">
+                        </bpel:to>
+                    </bpel:copy>
                     
                     <bpel:copy>
-                        <bpel:from><bpel:literal><tns:checkPriceOutput xmlns:tns="http://www.example.org/TransportationManagementSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <tns:price>0.0</tns:price>
-  <tns:transportId>0</tns:transportId>
-</tns:checkPriceOutput>
+                        <bpel:from part="parameters" variable="orderMgmtPLResponse">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[xsd:orderId]]>
+                            </bpel:query>
+                        </bpel:from>
+                        <bpel:to part="parameters" variable="transportationMgmtPLRequest1">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns3:orderId]]>
+                            </bpel:query>
+                        </bpel:to>
+                    </bpel:copy>
+                    
+                    <bpel:copy>
+                        <bpel:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                            <![CDATA[1]]>
+                        </bpel:from>
+                        <bpel:to part="parameters" variable="transportationMgmtPLRequest1">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns3:transportId]]></bpel:query>
+                        </bpel:to>
+                    </bpel:copy>
+                </bpel:assign>
+                <bpel:invoke name="orderShipment" partnerLink="transportationMgmtPL" operation="orderShipment" portType="ns2:transportationManagementService" inputVariable="transportationMgmtPLRequest1" outputVariable="transportationMgmtPLResponse1"></bpel:invoke>
+                
+                <bpel:assign validate="no" name="Assign10">
+                    
+                    <bpel:copy>
+                        <bpel:from><bpel:literal><tns:AutoIncOrderingProcessResponse xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:result>tns:result</tns:result>
+</tns:AutoIncOrderingProcessResponse>
 </bpel:literal></bpel:from>
                         <bpel:to variable="output" part="payload"></bpel:to>
                     </bpel:copy>
                     <bpel:copy>
-                        <bpel:from part="parameters" variable="transportationMgmtPLResponse2"></bpel:from>
-                        <bpel:to part="payload" variable="output"></bpel:to>
+                        <bpel:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <![CDATA[concat('Order no.: ', string($orderMgmtPLResponse.parameters/xsd:orderId) ,' shipped: ', $transportationMgmtPLResponse12.parameters/ns3:shipmentResult, ' with transportationId:', string($transportationMgmtPLResponse12.parameters/ns3:transportId))]]>
+                        </bpel:from>
+                        <bpel:to part="payload" variable="output">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
+                        </bpel:to>
                     </bpel:copy>
                 </bpel:assign>
+                <bpel:reply name="replyOutput" partnerLink="client" portType="tns:AutoIncOrderingProcess" operation="process" variable="output" />
+            </bpel:sequence>
+            <bpel:else>
+                <bpel:sequence>
+                    <bpel:assign validate="no" name="Assign7">
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        <bpel:copy>
+                            <bpel:from><bpel:literal><tns:orderShipmentInput xmlns:tns="http://www.example.org/TransportationManagementSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:orderId>0</tns:orderId>
+  <tns:transportId>0</tns:transportId>
+</tns:orderShipmentInput>
+</bpel:literal></bpel:from>
+                            <bpel:to part="parameters" variable="transportationMgmtPLRequest12"></bpel:to>
+                        </bpel:copy>
+                        <bpel:copy>
+                            <bpel:from part="parameters" variable="orderMgmtPLResponse">
+                                <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[xsd:orderId]]></bpel:query>
+                            </bpel:from>
+                            <bpel:to part="parameters" variable="transportationMgmtPLRequest12">
+                                <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns3:orderId]]></bpel:query>
+                            </bpel:to>
+                        </bpel:copy>
+                        <bpel:copy>
+                            <bpel:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[2]]>
+                            </bpel:from>
+                            <bpel:to part="parameters" variable="transportationMgmtPLRequest12">
+                                <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns3:transportId]]></bpel:query>
+                            </bpel:to>
+                        </bpel:copy>
+                    </bpel:assign>
+                    <bpel:invoke name="orderShipment" partnerLink="transportationMgmtPL" operation="orderShipment" portType="ns2:transportationManagementService" inputVariable="transportationMgmtPLRequest12" outputVariable="transportationMgmtPLResponse12"></bpel:invoke>
+                    <bpel:assign validate="no" name="Assign9">
+                        <bpel:copy>
+                            <bpel:from><bpel:literal><tns:AutoIncOrderingProcessResponse xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:result>tns:result</tns:result>
+</tns:AutoIncOrderingProcessResponse>
+</bpel:literal></bpel:from>
+                            <bpel:to variable="output" part="payload"></bpel:to>
+                        </bpel:copy>
+                        <bpel:copy>
+                            <bpel:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                <![CDATA[concat('Order no.: ', string($orderMgmtPLResponse.parameters/xsd:orderId) ,' shipped: ', $transportationMgmtPLResponse12.parameters/ns3:shipmentResult, ' with transportationId:', string($transportationMgmtPLResponse12.parameters/ns3:transportId))]]>
+                            </bpel:from>
+                            <bpel:to part="payload" variable="output">
+                                <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
+                            </bpel:to>
+                        </bpel:copy>
+                    </bpel:assign>
+                    <bpel:reply name="replyOutput" partnerLink="client" portType="tns:AutoIncOrderingProcess" operation="process" variable="output" />
+                </bpel:sequence>
             </bpel:else>
         </bpel:if>
-        <bpel:reply name="replyOutput" 
-               partnerLink="client"
-               portType="tns:AutoIncOrderingProcess"
-               operation="process" 
-               variable="output"
-               />
+        
     </bpel:sequence>
 </bpel:process>
 

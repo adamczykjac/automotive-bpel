@@ -82,6 +82,15 @@
     			</xsd:sequence>
     		</xsd:complexType>
     	</xsd:element>
+    	<xsd:element name="createOrderFault">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="createOrderFault"
+    					type="xsd:string">
+    				</xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
     </xsd:schema>
     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     	<xsd:import
@@ -118,6 +127,9 @@
   <wsdl:message name="orderStatusResponse">
   	<wsdl:part name="parameters" element="xsd1:getOrderStatusOutput"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="createOrderFault">
+  	<wsdl:part name="parameters" element="tns:createOrderFault"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="orderManagementService">
     <wsdl:operation name="checkPrice">
       <wsdl:input message="tns:checkPriceRequest"/>
@@ -126,7 +138,8 @@
     <wsdl:operation name="createOrder">
     	<wsdl:input message="tns:createOrderRequest"></wsdl:input>
     	<wsdl:output message="tns:createOrderResponse"></wsdl:output>
-    </wsdl:operation>
+            <wsdl:fault name="IdNotFound" message="tns:createOrderFault"></wsdl:fault>
+        </wsdl:operation>
     <wsdl:operation name="cancelOrder">
     	<wsdl:input message="tns:cancelOrderRequest"></wsdl:input>
     	<wsdl:output message="tns:cancelOrderResponse"></wsdl:output>
@@ -140,6 +153,7 @@
     	<wsdl:output message="tns:orderStatusResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
+  
   <wsdl:binding name="orderManagementServiceSOAP" type="tns:orderManagementService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     
@@ -161,6 +175,9 @@
       <wsdl:output>
         <soap:body use="literal"/>
       </wsdl:output>
+      <wsdl:fault name="IdNotFound">
+        <soap:fault use="literal" name="IdNotFound" />
+      </wsdl:fault>
     </wsdl:operation>
     
         <wsdl:operation name="cancelOrder">
@@ -194,6 +211,7 @@
     </wsdl:operation>
     
   </wsdl:binding>
+  
   <wsdl:service name="orderManagementService">
     <wsdl:port binding="tns:orderManagementServiceSOAP" name="orderManagementServiceSOAP">
       <soap:address location="http://localhost:8080/AutoInc/services/orderManagementService"/>

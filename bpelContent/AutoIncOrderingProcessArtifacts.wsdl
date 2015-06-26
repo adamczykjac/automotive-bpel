@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://www.example.org/orderManagementService/" xmlns:wsdl1="http://www.example.org/warehouseManagementService/" xmlns:wsdl2="http://www.example.org/transportationManagementService/" xmlns:xsd="http://www.example.org/orderManagmentSchema" xmlns:xsd1="http://www.example.org/WarehouseManagementSchema" xmlns:xsd2="http://www.example.org/TransportationManagementSchema" name="AutoIncOrderingProcess" targetNamespace="http://sample.bpel.org/bpel/sample">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://www.example.org/orderManagementService/" xmlns:wsdl1="http://www.example.org/warehouseManagementService/" xmlns:wsdl2="http://www.example.org/transportationManagementService/" xmlns:xsd="http://www.example.org/orderManagmentSchema" xmlns:xsd1="http://www.example.org/WarehouseManagementSchema" xmlns:xsd2="http://www.example.org/TransportationManagementSchema" name="AutoIncOrderingProcess" targetNamespace="http://sample.bpel.org/bpel/sample" xmlns:p="http://www.w3.org/2001/XMLSchema">
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      TYPE DEFINITION - List of types participating in this BPEL process 
@@ -37,6 +37,13 @@
                     </sequence>
                 </complexType>
             </element>
+            <element name="processFault">
+            	<complexType>
+            		<sequence>
+            			<element name="processFault" type="string"></element>
+            		</sequence>
+            	</complexType>
+            </element>
         </schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         	<xsd:import namespace="http://www.example.org/orderManagmentSchema" schemaLocation="AutoincSchemas/orderManagmentSchema.xsd">
@@ -57,7 +64,7 @@
         <part element="xsd:createOrderInput" name="payload"/>
     </message>
     <message name="AutoIncOrderingProcessResponseMessage">
-        <part element="xsd2:checkPriceOutput" name="payload"/>
+        <part element="tns:AutoIncOrderingProcessResponse" name="payload"/>
     </message>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,6 +73,9 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
 
     <!-- portType implemented by the AutoIncOrderingProcess BPEL process -->
+    <message name="processFault">
+    	<part name="parameters" element="tns:processFault"></part>
+    </message>
     <portType name="AutoIncOrderingProcess">
         <operation name="process">
             <input message="tns:AutoIncOrderingProcessRequestMessage"/>
